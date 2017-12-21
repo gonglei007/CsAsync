@@ -9,25 +9,34 @@ namespace CsAsync
     /// </summary>
     class Waterfall
     {
-        Queue<Action<Exception, CallbackDelegate>> tasks = new Queue<Action<Exception, CallbackDelegate>>();
-        Action<Exception>           result;
+        Queue<Action<Exception, CallbackDelegate>>  tasks = new Queue<Action<Exception, CallbackDelegate>>();
+        Action<Exception>                           resultCallback;
         public delegate void CallbackDelegate(Exception e);
         public Waterfall()
         {
         }
 
+        /// <summary>
+        /// 添加任务
+        /// 任务方法定义：void TaskMethod(Exception e, CallbackDelegate callback){}
+        /// </summary>
+        /// <param name="task">任务Action</param>
         public void AddTask(Action<Exception, CallbackDelegate> task)
         {
             tasks.Enqueue(task);
         }
 
-        public void Start(Action<Exception> result)
+        /// <summary>
+        /// 开始执行任务序列
+        /// </summary>
+        /// <param name="resultCallback">任务全部执行完成后触发的回掉</param>
+        public void Start(Action<Exception> resultCallback)
         {
-            this.result = result;
+            this.resultCallback = resultCallback;
 
             if (tasks.Count == 0)
             {
-                result(null);
+                resultCallback(null);
                 return;
             }
             DoTask();
@@ -46,11 +55,10 @@ namespace CsAsync
         /// 如果没有异常，进入下一个任务。
         /// </summary>
         /// <param name="e"></param>
-        /// <param name="callback"></param>
         private void OnCallback(Exception e) {
             if (tasks.Count == 0 || e != null)
             {
-                result(e);
+                this.resultCallback(e);
                 return;
             }
             DoTask();
