@@ -9,7 +9,7 @@ C#的异步流程控制库，用于异步流程方法调用管理的。
 
 伪码例子：
 
-'''
+```
         public void Task1(Exception e, Waterfall.CallbackDelegate callback)
         {
 			DoRequest1(param, (string response)=>{
@@ -55,7 +55,7 @@ C#的异步流程控制库，用于异步流程方法调用管理的。
                 Console.WriteLine("All done! -> " + e.ToString());		// 任务全部完成。
             });
         }
-'''
+```
 
 ## 参考
 注：类似于nodejs的async.
