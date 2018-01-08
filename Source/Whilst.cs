@@ -9,13 +9,15 @@ namespace CsAsync
     /// </summary>
     class Whilst
     {
-        Func<bool>                                  test;
-        Action<Action<Exception>>                   fn;
-        Action<Exception>                           callback;
+        Func<bool> test;
+        Action<Action<Exception>> fn;
+        Action<Exception> fnCallback;
+        Action<Exception> callback;
 
         public Whilst(Func<bool> test, Action<Action<Exception>> fn, Action<Exception> callback)
         {
-            if(test == null || fn == null || callback == null){
+            if (test == null || fn == null || callback == null)
+            {
                 throw new Exception("Invalid paramters!");
             }
             this.test = test;
@@ -28,12 +30,15 @@ namespace CsAsync
         /// <summary>
         /// 开始执行任务。
         /// </summary>
-        private void DoTask() {
-            if(this.test()){
-                this.fn((Exception e) => {
+        private void DoTask()
+        {
+            if (this.test())
+            {
+                this.fn((Exception e) =>
+                {
                     if (e == null)
                     {
-                        this.fn(null);
+                        DoTask();
                     }
                     else
                     {
@@ -41,10 +46,12 @@ namespace CsAsync
                     }
                 });
             }
-            else{
+            else
+            {
                 callback(null);
             }
         }
+
     }
 
 }

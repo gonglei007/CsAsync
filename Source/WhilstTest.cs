@@ -42,7 +42,13 @@ namespace CsAsync
                     string item = testString[i];
                     DoTask(item, (Exception e)=>{
                         i++;
-                        callback(null);
+                        if (item == "item2")
+                        {
+                            callback(new Exception("Exception test!" + item));
+                        }
+                        else {
+                            callback(null);
+                        }
                     });
                 },
                 (Exception e)=>{
