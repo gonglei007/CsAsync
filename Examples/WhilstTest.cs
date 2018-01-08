@@ -30,14 +30,17 @@ namespace CsAsync
             Console.WriteLine("Task-End");
         }
 
+        // Whilst测试案例
         public void DoTest()
         {
             string[] testString = { "item1", "item2", "item3"};
             int i = 0;
             Whilst whilst = new Whilst(
+                // 测试
                 ()=>{
                     return i < testString.Length;
                 },
+                // 执行
                 (Action<Exception> callback) => {
                     string item = testString[i];
                     DoTask(item, (Exception e)=>{
@@ -51,6 +54,7 @@ namespace CsAsync
                         }
                     });
                 },
+                // 结果
                 (Exception e)=>{
                     if (e != null)
                     {
