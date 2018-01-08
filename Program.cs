@@ -6,8 +6,10 @@ namespace CsAsync
     {
         static void Main(string[] args)
         {
-            WaterfallTest test = new WaterfallTest();
-            test.DoTest();
+            WaterfallTest waterfallTest = new WaterfallTest();
+            waterfallTest.DoTest();
+            WhilstTest whilstTest = new WhilstTest();
+            whilstTest.DoTest();
             Console.ReadKey();
         }
 

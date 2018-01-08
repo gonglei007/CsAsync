@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{050015A2-1F30-462A-843C-B96587F59601}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Source/Waterfall.cs">
+    <Files>
+      <File FileName="Program.cs" Line="13" Column="9" />
+      <File FileName="Source/Whilst.cs" Line="22" Column="30" />
+      <File FileName="Source/WhilstTest.cs" Line="7" Column="17" />
+      <File FileName="Source/Waterfall.cs" Line="24" Column="32" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.CsAsync PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>
