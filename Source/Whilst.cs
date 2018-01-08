@@ -11,7 +11,6 @@ namespace CsAsync
     {
         Func<bool> test;
         Action<Action<Exception>> fn;
-        Action<Exception> fnCallback;
         Action<Exception> callback;
 
         public Whilst(Func<bool> test, Action<Action<Exception>> fn, Action<Exception> callback)
