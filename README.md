@@ -119,7 +119,7 @@ C#的异步流程控制库，用于异步流程方法调用管理的。
 
 ## TODO
  - 任务Action支持传递数据参数。
- - 其它流程控制，如whilist、foreach...等。
+ - 其它流程控制，如doWhilist、foreach...等。
 
 ## 参考
 注：类似于nodejs的async.
