@@ -13,14 +13,14 @@ namespace CsAsync
             waterfall.AddTask((Action<Exception> callback) =>
             {
                 // 延迟几秒触发回调，触发下一个任务。
-                Util.DoTask("task1", 1000, (Exception e) =>
+                TestUtil.DoTask("task1", 1000, (Exception e) =>
                 {
                     callback(e);
                 });
             });
             waterfall.AddTask((Action<Exception> callback) =>
             {
-                Util.DoTask("task2", 2000, (Exception e) =>
+                TestUtil.DoTask("task2", 2000, (Exception e) =>
                 {
                     callback(e);
                 });

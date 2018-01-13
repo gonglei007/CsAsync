@@ -6,7 +6,7 @@ using System.Timers;
 
 namespace CsAsync
 {
-    class Util
+    class TestUtil
     {
         public static void DoTask(string data, int ms, Action<Exception> callback){
             Console.WriteLine("[Task]-Start");

@@ -19,7 +19,7 @@ namespace CsAsync
                 // 执行
                 (object item, Action<Exception> callback) =>
                 {
-                    Util.DoTask(item.ToString(), 1000, (Exception e) =>
+                    TestUtil.DoTask(item.ToString(), 1000, (Exception e) =>
                     {
                         if (item.ToString() == "item2")
                         {
