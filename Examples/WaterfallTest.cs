@@ -10,19 +10,19 @@ namespace CsAsync
         {
             Console.WriteLine("== Test Waterfall ==");
             Waterfall waterfall = new Waterfall();
-            waterfall.AddTask((Action<Exception> callback) =>
+            waterfall.AddTask((TaskCallback callback) =>
             {
                 // 延迟几秒触发回调，触发下一个任务。
                 TestUtil.DoTask("task1", 1000, (Exception e) =>
                 {
-                    callback(e);
+                    callback.DoCallback(e);
                 });
             });
-            waterfall.AddTask((Action<Exception> callback) =>
+            waterfall.AddTask((TaskCallback callback) =>
             {
                 TestUtil.DoTask("task2", 2000, (Exception e) =>
                 {
-                    callback(e);
+                    callback.DoCallback(e);
                 });
             });
             waterfall.Start((Exception e) =>

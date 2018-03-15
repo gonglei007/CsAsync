@@ -46,6 +46,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\Each.cs" />
+    <Compile Include="Source\TaskCallback.cs" />
     <Compile Include="Source\Waterfall.cs" />
     <Compile Include="Examples\WaterfallTest.cs" />
     <Compile Include="Source\Whilst.cs" />
