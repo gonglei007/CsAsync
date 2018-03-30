@@ -125,6 +125,7 @@ C#的异步流程控制库，用于异步流程方法调用管理的。
 TODO：遍历数组。
 ----
 ## TODO
+ - 实现taskcallback超时机制。
  - 任务Action支持传递数据参数。
  - 其它流程控制，如doWhilist、foreach...等。
 
